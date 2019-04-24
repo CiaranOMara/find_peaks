@@ -85,7 +85,7 @@ foreach my $fn (@in_files) {
 	load_gff(FILE=>$fn, IN_REF=>\@in);
 	
 	my $probes = @in;
-	
+
 	find_quants(IN_REF=>\@in, PEAKMINS_REF=>\@peakmins);
 	find_randomised_peaks(IN_REF=>\@in, PEAKMINS_REF=>\@peakmins, PEAK_COUNT=>\%peak_count, PEAKS=>\%peaks);
 	
@@ -146,10 +146,7 @@ sub find_significant_peaks {
 
 sub calculate_fdr {
 	my (%opts) = @_;
-	my $in_ref = $opts{IN_REF};
 	my $peakmins = $opts{PEAKMINS_REF};
-	my $peak_count = $opts{PEAK_COUNT};
-	my $log_scores = $opts{LOG_SCORES};
 	my $regression = $opts{REGRESSION};
 	my $fdr = $opts{FDR};
 	my $peak_fdr_cutoff = $opts{PEAK_FDR_CUTOFF};
@@ -192,7 +189,6 @@ sub calculate_regressions {
 	my (%opts) = @_;
 	my $in_ref = $opts{IN_REF};
 	my $peakmins = $opts{PEAKMINS_REF};
-	my $peaks = $opts{PEAKS};
 	my $peak_count = $opts{PEAK_COUNT};
 	my $log_scores = $opts{LOG_SCORES};
 	my $regression = $opts{REGRESSION};
@@ -255,7 +251,6 @@ sub find_randomised_peaks {
 	my (%opts) = @_;
 	my $in_ref = $opts{IN_REF};
 	my $peakmins_ref = $opts{PEAKMINS_REF};
-	my $peaks = $opts{PEAKS};
 	my $peak_count = $opts{PEAK_COUNT};
 	
 	print STDERR "Duplicating ...               \n";
@@ -472,7 +467,6 @@ sub make_unified_peaks {
 	my $total = @$ref;
 		
 	# Unify overlapping peaks, and make significant peaks file
-	my $skipped_peaks;
 	print STDERR "Combining significant peaks ...\n";
 	
 	# unroll chromosomes for speed

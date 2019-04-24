@@ -298,8 +298,7 @@ sub stdev {
 	map {$sum += abs($_-$mean)} @a;
 	
 	my $sd= $sum/($n-1);
-	my $se = $sd/sqrt($n);
-	
+
 	return $sd;
 }
 
