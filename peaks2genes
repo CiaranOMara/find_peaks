@@ -18,6 +18,7 @@
 # USA
 
 use strict;
+use warnings;
 use File::Basename;
 use 5.010;
 $|++;
