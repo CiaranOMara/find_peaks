@@ -1,6 +1,6 @@
 #!/usr/bin/perl -w
 
-# Copyright © 2012-2015, Owen Marshall
+# Copyright Â© 2012-2015, Owen Marshall
 
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -24,7 +24,7 @@ $|++;
 
 my $version = "1.0.1";
 
-print STDERR "\nfind_peaks v$version\nCopyright © 2012-15, Owen Marshall\n\n";
+print STDERR "\nfind_peaks v$version\nCopyright Â© 2012-15, Owen Marshall\n\n";
 
 my %vars = (
 	'fdr' => 0.01,
