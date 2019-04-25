@@ -237,7 +237,7 @@ sub calculate_regressions {
 		
 		for my $i (0 .. $#{$$peak_count{$pm}}) {
 			next unless $$peak_count{$pm}[$i];
-			my ($b,$a) = @{$$regression{$pm}};
+			my ($b,$a) = @{$$regression{$pm}}; #TODO: are these the same $b and $a on lines 231 and 232?
 			my $logval = ($b*$i + $a);
 			my $val = 10**$logval;
 			print OUTP "lin regress: $i\t$$log_scores{$pm}[$i]\t$logval\t$val\n";
