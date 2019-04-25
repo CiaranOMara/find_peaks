@@ -393,7 +393,7 @@ sub load_gff {
 		print STDERR "Read $i lines ...\r" if $i%10000 == 0;
 		chomp;
 		
-		my @line = split('\t');
+		my @line = split('\s'); #Note: bedGraph files may be space delimited.
 		
 		my ($chr, $start, $end, $score);
 		if ($#line == 3) {
